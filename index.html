@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최준형 | UX Researcher & UX/UI Designer Portfolio</title>
+    
+    <!-- Portfolio Typography: Pretendard + IBM Plex Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    
+    <style>
+        :root {
+            /* 1. 추천 컬러 테마: 소프트하고 세련된 인디고 & 슬레이트 그레이 조합 */
+            --bg-color: #F8FAFC;         /* Soft Cool Grey (Slate 50) */
+            --white: #FFFFFF;
+            --text-primary: #0F172A;      /* Dark Slate (Slate 900) */
+            --text-secondary: #475569;    /* Muted Slate (Slate 600) */
+            --primary-accent: #4F46E5;    /* Premium Indigo (Indigo 600) */
+            --accent-bg: #EEF2FF;         /* Soft Indigo Tint (Indigo 50) */
+            --border-color: #E2E8F0;      /* Muted Border (Slate 200) */
+            --max-width: 1200px;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --font-family: 'Pretendard', 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'IBM Plex Mono', 'Pretendard', ui-monospace, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-family);
+            outline: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        .section-label {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--primary-accent);
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+            margin-bottom: 48px;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 767px) {
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 32px;
+            }
+        }
+
+        /* --- NEW HERO SECTION --- */
+        .hero-new {
+            position: relative;
+            min-height: 100vh;
+            background-color: #FAFAFB; /* zinc-50 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            overflow: hidden;
+        }
+
+        /* Background Grid */
+        .hero-bg-grid {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: 
+                linear-gradient(#000 1px, transparent 1px),
+                linear-gradient(90deg, #000 1px, transparent 1px);
+            background-size: 32px 32px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Ambient Blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .blob-tl {
+            top: -20%;
+            left: -10%;
+            width: 50%;
+            height: 50%;
+            background-color: rgba(191, 219, 254, 0.3); /* blue-200/30 */
+        }
+        .blob-br {
+            bottom: -20%;
+            right: -10%;
+            width: 50%;
+            height: 50%;
+            background-color: rgba(199, 210, 254, 0.3); /* indigo-200/30 */
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 10;
+            max-width: 900px; /* max-w-4xl is 896px */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: none;
+        }
+
+
+        /* Main Card */
+        .hero-main-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 2rem;
+            padding: 48px 64px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            width: 100%;
+            text-align: left;
+        }
+
+        @media (max-width: 767px) {
+            .hero-main-card {
+                padding: 32px 24px;
+                border-radius: 1.5rem;
+            }
+            .hero-content-wrapper {
+                transform: translateY(0);
+            }
+        }
+
+        /* Paragraph and Words */
+        .scramble-paragraph-new {
+            font-size: 1.35rem;
+            line-height: 1.7;
+            color: #1F2937; /* gray-800 - 진한 차콜 */
+            word-break: keep-all;
+        }
+        
+        @media (min-width: 768px) {
+            .scramble-paragraph-new {
+                font-size: 2rem;
+                line-height: 1.6;
+            }
+        }
+
+        .word-wrap {
+            display: inline-block;
+            transition: opacity 0.3s ease, filter 0.3s ease;
+        }
+
+        .scramble-paragraph-new.dimmed .word-wrap,
+        .scramble-paragraph-new.dimmed .scramble-word-wrap:not(.hovered) {
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+
+        .scramble-word-wrap {
+            position: relative;
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: #2563EB; /* 파란색 강조 */
+            cursor: pointer;
+            z-index: 10;
+            padding: 0 4px;
+            margin: 0 -4px;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+        }
+
+        .scramble-word-wrap.hovered {
+            transform: scale(1.1) translateY(-4px);
+            color: #FFFFFF;
+            z-index: 20;
+        }
+
+        .scramble-word-bg {
+            position: absolute;
+            inset: -4px -8px;
+            background-color: #000000;
+            border-radius: 8px;
+            z-index: -1;
+            opacity: 0;
+            transform: scale(0.85);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0px 10px 25px -5px rgba(37, 99, 235, 0.4), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+            pointer-events: none;
+        }
+
+        .scramble-word-wrap.hovered .scramble-word-bg {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .tech-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            z-index: 12;
+            opacity: 0;
+            transform: scale(0);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s ease;
+            pointer-events: none;
+        }
+        .tech-dot-tr {
+            top: -6px;
+            right: -6px;
+            background-color: #3B82F6; /* blue-500 */
+        }
+        .tech-dot-bl {
+            bottom: -6px;
+            left: -6px;
+            background-color: #EC4899; /* pink-500 */
+        }
+        .scramble-word-wrap.hovered .tech-dot {
+            opacity: 1;
+            transform: scale(1);
+            transition-delay: 0.1s;
+        }
+
+        .scramble-word {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Footer text */
+        .hero-footer-hint {
+            margin-top: 32px;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.875rem; /* text-sm */
+            color: #9CA3AF; /* gray-400 */
+        }
+
+        .about-section {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        .about-intro-text {
+            font-size: 1.35rem;
+            line-height: 1.65;
+            color: var(--text-primary);
+            max-width: 900px;
+            word-break: keep-all;
+            margin-bottom: 24px;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .principle-card {
+            background-color: var(--bg-color);
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        .principle-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background-color: var(--primary-accent);
+            transition: var(--transition-smooth);
+        }
+
+        .principle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+            border-color: rgba(79, 70, 229, 0.2);
+        }
+
+        .principle-card:hover::before {
+            width: 100%;
+        }
+
+        .principle-num {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            margin-bottom: 24px;
+        }
+
+        .principle-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .principle-desc {
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            word-break: keep-all;
+        }
+
+        @media (max-width: 1024px) {
+            .principles-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+
+        .work-section {
+            padding: 100px 0;
+        }
+
+        .work-list {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .work-card {
+            background-color: var(--white);
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            transition: var(--transition-smooth);
+        }
+
+        .work-card:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+
+        /* 지그재그 배치 */
+        .work-card:nth-child(even) {
+            direction: rtl;
+        }
+
+        .work-card:nth-child(even) .work-visual-panel,
+        .work-card:nth-child(even) .work-content {
+            direction: ltr;
+        }
+
+        .work-visual-panel {
+            background-color: #ECEFF4;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .work-visual-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            color: var(--white);
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-visual-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.3) 100%);
+            z-index: 1;
+        }
+
+        .work-visual-placeholder .inner-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .work-visual-placeholder svg {
+            width: 56px;
+            height: 56px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+        }
+
+        .placeholder-path {
+            font-size: 0.6875rem;
+            font-family: var(--font-mono);
+            background-color: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+
+        /* 프로젝트 분위기 맞춤 배경 색상 */
+        .epitext-bg { background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%); }
+        .lg-bg { background: linear-gradient(135deg, #881337 0%, #9F1239 100%); }
+        .ugly-bg { background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); }
+
+        .work-content {
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .work-header {
+            margin-bottom: 24px;
+        }
+
+        .work-num {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .work-meta {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .work-name {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .work-desc {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            word-break: keep-all;
+        }
+
+        .work-quick-info {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 16px;
+            padding: 20px;
+            background-color: var(--bg-color);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 28px;
+            font-size: 0.8125rem;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .info-val {
+            color: var(--text-secondary);
+        }
+
+        .work-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .accordion-btn {
+            background-color: var(--white);
+            border: 1px solid var(--primary-accent);
+            color: var(--primary-accent);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .accordion-btn:hover {
+            background-color: var(--primary-accent);
+            color: var(--white);
+        }
+
+        .accordion-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-btn.active svg {
+            transform: rotate(180deg);
+        }
+
+        .work-accordion-content {
+            grid-column: span 2;
+            background-color: #FAFBFC;
+            border-top: 1px solid var(--border-color);
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .work-accordion-content.open {
+            opacity: 1;
+        }
+
+        .accordion-inner {
+            padding: 48px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .accordion-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .accordion-block-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .accordion-block-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 16px;
+            background-color: var(--primary-accent);
+            border-radius: 2px;
+        }
+
+        .accordion-block-text {
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            word-break: keep-all;
+        }
+
+        @media (max-width: 1024px) {
+            .work-card {
+                grid-template-columns: 1fr;
+            }
+            .work-card:nth-child(even) {
+                direction: ltr;
+            }
+            .work-accordion-content {
+                grid-column: span 1;
+            }
+            .accordion-inner {
+                grid-template-columns: 1fr;
+                padding: 32px 24px;
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .work-content {
+                padding: 24px;
+            }
+            .work-quick-info {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .work-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .accordion-btn {
+                justify-content: center;
+            }
+        }
+
+        .more-work-section {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .more-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .more-card {
+            background-color: var(--bg-color);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+        }
+
+        .more-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.04);
+            border-color: rgba(79, 70, 229, 0.2);
+        }
+
+        .more-img-box {
+            height: 240px;
+            background-color: #E2E8F0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .more-img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            position: relative;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .more-card:hover .more-img-placeholder {
+            transform: scale(1.03);
+        }
+
+        .more-dale-bg { background: linear-gradient(135deg, #334155 0%, #475569 100%); }
+        .more-run-bg { background: linear-gradient(135deg, #065F46 0%, #047857 100%); }
+
+        .more-img-placeholder svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 8px;
+        }
+
+        .more-content {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .more-header {
+            margin-bottom: 20px;
+        }
+
+        .more-meta {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .more-title-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .more-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .more-arrow {
+            transition: transform 0.3s ease;
+            color: var(--text-secondary);
+        }
+
+        .more-card:hover .more-arrow {
+            transform: translate(4px, -4px);
+            color: var(--primary-accent);
+        }
+
+        .more-desc {
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            word-break: keep-all;
+        }
+
+        .more-info-list {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .more-info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+        }
+
+        .more-info-item::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background-color: var(--primary-accent);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 1024px) {
+            .more-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        .background-section {
+            padding: 100px 0;
+        }
+
+        .background-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+        }
+
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .timeline-header {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+            display: block;
+            letter-spacing: -0.02em;
+        }
+
+        .timeline-list {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -33px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 3px solid var(--primary-accent);
+            transition: var(--transition-smooth);
+        }
+
+        .timeline-item:hover .timeline-marker {
+            background-color: var(--primary-accent);
+            box-shadow: 0 0 0 6px rgba(79, 70, 229, 0.15);
+        }
+
+        .timeline-date {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            margin-bottom: 8px;
+        }
+
+        .timeline-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-subtitle {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .timeline-desc-list {
+            padding-left: 16px;
+            list-style-type: circle;
+        }
+
+        .timeline-desc-list li {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 1024px) {
+            .background-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        .contact-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--primary-accent) 0%, #312E81 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 80%);
+            pointer-events: none;
+        }
+
+        .contact-label {
+            font-size: 0.8125rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.35;
+            margin-bottom: 24px;
+            word-break: keep-all;
+        }
+
+        .contact-desc {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 48px auto;
+            line-height: 1.6;
+            word-break: keep-all;
+        }
+
+        .contact-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            min-height: 48px;
+            padding: 0 24px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            flex-shrink: 0;
+            font-family: var(--font-family);
+            font-size: 0.9375rem;
+            font-weight: 700;
+            line-height: 1;
+            white-space: nowrap;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:focus-visible {
+            outline: 3px solid rgba(255, 255, 255, 0.45);
+            outline-offset: 3px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-accent);
+            color: var(--white);
+            border-color: var(--primary-accent);
+            box-shadow: 0 8px 18px rgba(79, 70, 229, 0.18);
+        }
+
+        .btn-primary:hover {
+            background-color: #4338CA;
+            border-color: #4338CA;
+            color: var(--white);
+        }
+
+        .btn-white {
+            background-color: var(--white);
+            color: var(--primary-accent);
+            border-color: var(--white);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.16);
+        }
+
+        .btn-white:hover {
+            background-color: var(--accent-bg);
+            color: var(--primary-accent);
+            border-color: var(--accent-bg);
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.2);
+        }
+
+        .btn-trans {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: var(--white);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .btn-trans:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.75);
+            color: var(--white);
+        }
+
+        @media (max-width: 767px) {
+            .contact-title {
+                font-size: 1.85rem;
+            }
+            .contact-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                max-width: 360px;
+                margin: 0 auto;
+                padding: 0;
+            }
+            .contact-buttons .btn {
+                width: 100%;
+            }
+        }
+
+        .footer {
+            padding: 40px 0;
+            background-color: var(--bg-color);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 최상단 탑버튼 */
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            z-index: 99;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            color: var(--primary-accent);
+            border-color: var(--primary-accent);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 767px) {
+            .footer .container {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.reveal-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 모션 간소화 대응 */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-delay: 0s !important;
+                animation-duration: 0s !important;
+                animation-iteration-count: 1 !important;
+                background-attachment: scroll !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0s !important;
+                transition-delay: 0s !important;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="hero-new" id="hero">
+            <!-- Background Ambience -->
+            <div class="hero-bg-grid"></div>
+            <div class="blob blob-tl"></div>
+            <div class="blob blob-br"></div>
+
+            <!-- Card Container -->
+            <div class="hero-content-wrapper reveal">
+
+                <!-- Main Content -->
+                <div class="hero-main-card">
+                    <p class="scramble-paragraph-new" id="scrambleParagraph">
+                        <span class="word-wrap">AI와</span>
+                        <span class="word-wrap">바이브코딩의</span>
+                        <span class="word-wrap">시대,</span>
+                        <span class="word-wrap">저는</span>
+                        <span class="word-wrap">‘존재하는</span>
+                        <span class="word-wrap">문제’를</span>
+                        <span class="word-wrap">먼저</span>
+                        <span class="word-wrap">묻고</span>
+                        <span class="word-wrap">데이터를</span>
+                        <span class="word-wrap">사용자의</span>
+                        <span class="word-wrap">판단</span>
+                        <span class="word-wrap">근거로</span>
+                        <span class="word-wrap">바꾸는</span>
+                        <span class="word-wrap">UX</span>
+                        <span class="word-wrap">Designer</span>
+                        <span class="word-wrap">최준형입니다.</span>
+                        <span class="word-wrap">제가</span>
+                        <span class="word-wrap">문제를</span>
+                        <span class="word-wrap">바라보는</span>
+                        <span class="word-wrap">관점은</span>
+                        <span class="scramble-word-wrap interactive" role="button" tabindex="0" data-target="#about">
+                            <span class="scramble-word" data-original="소개">소개</span>
+                            <span class="scramble-word-bg"></span>
+                            <span class="tech-dot tech-dot-tr"></span>
+                            <span class="tech-dot tech-dot-bl"></span>
+                        </span><span class="word-wrap">에서,</span>
+                        <span class="word-wrap">이를</span>
+                        <span class="word-wrap">실제</span>
+                        <span class="word-wrap">서비스</span>
+                        <span class="word-wrap">경험으로</span>
+                        <span class="word-wrap">풀어낸</span>
+                        <span class="word-wrap">과정은</span>
+                        <span class="scramble-word-wrap interactive" role="button" tabindex="0" data-target="#work">
+                            <span class="scramble-word" data-original="프로젝트">프로젝트</span>
+                            <span class="scramble-word-bg"></span>
+                            <span class="tech-dot tech-dot-tr"></span>
+                            <span class="tech-dot tech-dot-bl"></span>
+                        </span><span class="word-wrap">에서</span>
+                        <span class="word-wrap">확인할</span>
+                        <span class="word-wrap">수</span>
+                        <span class="word-wrap">있습니다.</span>
+                        <span class="word-wrap">산업공학을</span>
+                        <span class="word-wrap">기반으로</span>
+                        <span class="word-wrap">쌓아온</span>
+                        <span class="word-wrap">학업과</span>
+                        <span class="word-wrap">연구·인턴</span>
+                        <span class="word-wrap">경험은</span>
+                        <span class="scramble-word-wrap interactive" role="button" tabindex="0" data-target="#experience">
+                            <span class="scramble-word" data-original="이력">이력</span>
+                            <span class="scramble-word-bg"></span>
+                            <span class="tech-dot tech-dot-tr"></span>
+                            <span class="tech-dot tech-dot-bl"></span>
+                        </span><span class="word-wrap">에</span>
+                        <span class="word-wrap">정리했으며,</span>
+                        <span class="word-wrap">함께</span>
+                        <span class="word-wrap">이야기하고</span>
+                        <span class="word-wrap">싶은</span>
+                        <span class="word-wrap">일이</span>
+                        <span class="word-wrap">있다면</span>
+                        <span class="scramble-word-wrap interactive" role="button" tabindex="0" data-target="#contact">
+                            <span class="scramble-word" data-original="연락">연락</span>
+                            <span class="scramble-word-bg"></span>
+                            <span class="tech-dot tech-dot-tr"></span>
+                            <span class="tech-dot tech-dot-bl"></span>
+                        </span><span class="word-wrap">으로</span>
+                        <span class="word-wrap">이어주세요.</span>
+                    </p>
+                </div>
+
+                <!-- Footer Hint -->
+                <p class="hero-footer-hint">파란색 글씨를 클릭해주세요</p>
+            </div>
+        </section>
+
+        <section class="about-section reveal" id="about">
+            <div class="container">
+                <span class="section-label">소개</span>
+                <h2 class="section-title">“사용자의 말보다, 사용자가 판단하는 맥락을 봅니다.”</h2>
+                
+                <div class="about-grid">
+                    <p class="about-intro-text">
+                        기술은 넘쳐나지만 사용자 경험이 비어 있는 서비스가 늘어나는 지금, 저는 주어진 해결책보다 실제 문제가 존재하는지를 먼저 확인합니다. 정량 데이터의 논리와 사용자의 감정적 맥락을 연결하고, 불확실한 상황에서도 사용자가 더 나은 선택을 할 수 있도록 정보를 판단의 근거로 바꾸는 일을 해왔습니다.
+                    </p>
+
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <div class="principle-num">01</div>
+                            <h3 class="principle-title">Question the premise</h3>
+                            <p class="principle-desc">주어진 해결책보다 실제 문제가 존재하는지 먼저 확인합니다.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-num">02</div>
+                            <h3 class="principle-title">Turn data into evidence</h3>
+                            <p class="principle-desc">정량 데이터와 사용자 인터뷰를 연결해 디자인 의사결정의 근거를 만듭니다.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-num">03</div>
+                            <h3 class="principle-title">Build to validate</h3>
+                            <p class="principle-desc">화면을 설계하는 데서 멈추지 않고 프로토타입을 만들어 실제 맥락에서 검증합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="work-section reveal" id="work">
+            <div class="container">
+                <span class="section-label">프로젝트</span>
+                <h2 class="section-title">“문제를 발견하고,<br>근거를 만들고,<br>경험으로 구현한 프로젝트”</h2>
+
+                <div class="work-list">
+                    <!-- Project 01: EPITEXT -->
+                    <div class="work-card">
+                        <div class="work-visual-panel">
+                            <div class="work-visual-placeholder epitext-bg">
+                                <div class="inner-content">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+                                    </svg>
+                                    <span class="placeholder-path">assets/epitext-cover.jpg</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <div class="work-header">
+                                <span class="work-num">PROJECT 01</span>
+                                <div class="work-meta">AI · UX RESEARCH · UI DESIGN · PROTOTYPE</div>
+                                <h3 class="work-name">EPITEXT</h3>
+                                <p class="work-desc">
+                                    “AI가 답을 대신 내리는 것이 아니라, 전문가가 후보와 근거를 비교하고 판단하도록 돕는 금석문 탁본 복원 서비스”
+                                </p>
+                            </div>
+                            
+                            <div class="work-quick-info">
+                                <div>
+                                    <div class="info-label">주요 역할</div>
+                                    <div class="info-val">금석문 전문가 인터뷰, UX 구조 및 핵심 사용자 흐름 설계, UI 디자인</div>
+                                </div>
+                                <div>
+                                    <div class="info-label">핵심 결과</div>
+                                    <div class="info-val">금석문 전문가 5명 인터뷰, 전체 서비스 만족도 80%</div>
+                                </div>
+                            </div>
+
+                            <div class="work-actions">
+                                <button class="accordion-btn" data-target="accordion-epitext" aria-expanded="false" aria-controls="accordion-epitext">
+                                    View Case Study
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 9l6 6 6-6"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- EPITEXT Accordion -->
+                        <div class="work-accordion-content" id="accordion-epitext">
+                            <div class="accordion-inner">
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Problem</h4>
+                                    <p class="accordion-block-text">
+                                        훼손된 금석문 탁본은 판독이 어렵고, 연구자마다 서로 다른 해석을 내리지만 판단 근거를 비교할 수 있는 구조가 부족했습니다.
+                                    </p>
+                                </div>
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Research</h4>
+                                    <p class="accordion-block-text">
+                                        금석문 판독 및 고고학 도메인 전문가 그룹을 대상으로 사용자 심층 인터뷰를 진행하여, 단순 결과값만 도출하는 것보다 다각적인 정보 도출 추론 과정 자체를 추적해야 함을 발견했습니다.
+                                    </p>
+                                </div>
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Key Decision</h4>
+                                    <p class="accordion-block-text">
+                                        단일 정답을 제시하는 AI 대신 시각적 근거와 문맥적 근거, 복수의 문자 후보를 함께 제시하는 구조를 설계했습니다.
+                                    </p>
+                                </div>
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Outcome</h4>
+                                    <p class="accordion-block-text">
+                                        만족도 80%를 돌파하고, 60% 이상의 타겟 전문가들로부터 AI 판단과정을 다룬 시각 뷰어가 실무 정합성이 매우 높다는 유의미한 결론을 도출했습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 02: UPscription -->
+                    <div class="work-card">
+                        <div class="work-visual-panel">
+                            <div class="work-visual-placeholder lg-bg">
+                                <div class="inner-content">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                    </svg>
+                                    <span class="placeholder-path">assets/lg-subscription-cover.jpg</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <div class="work-header">
+                                <span class="work-num">PROJECT 02</span>
+                                <div class="work-meta">CX STRATEGY · UX RESEARCH · SERVICE DESIGN</div>
+                                <h3 class="work-name">UPscription</h3>
+                                <p class="work-desc">
+                                    “렌탈과 구분되지 않던 가전 구독 경험을 지속적인 관계 중심의 순환형 고객 여정으로 재설계한 프로젝트”
+                                </p>
+                            </div>
+                            
+                            <div class="work-quick-info">
+                                <div>
+                                    <div class="info-label">주요 역할</div>
+                                    <div class="info-val">가전 구독 시장 및 경쟁 서비스 분석, 리뷰 및 VoC 분석, 사용자 인터뷰, 페르소나 및 고객 여정 설계</div>
+                                </div>
+                                <div>
+                                    <div class="info-label">핵심 결과</div>
+                                    <div class="info-val">리뷰 VoC 314,316건 분석, 사용자 인터뷰 10명 수행, 순환형 구독 고객 여정 및 가동형 AI 기능 구조 도출</div>
+                                </div>
+                            </div>
+
+                            <div class="work-actions">
+                                <button class="accordion-btn" data-target="accordion-lg" aria-expanded="false" aria-controls="accordion-lg">
+                                    View Case Study
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 9l6 6 6-6"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- LG Accordion -->
+                        <div class="work-accordion-content" id="accordion-lg">
+                            <div class="accordion-inner">
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Problem</h4>
+                                    <p class="accordion-block-text">
+                                        서비스 명칭은 렌탈에서 구독으로 바뀌었지만 사용자는 구독만의 차이와 지속적인 가치를 체감하지 못하는 지점이 핵심이었습니다.
+                                    </p>
+                                </div>
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Research</h4>
+                                    <p class="accordion-block-text">
+                                        가전 및 렌탈 관련 데이터셋 총 314,316건에 대한 방대한 텍스트 마이닝을 진행하여 실사용자들의 진짜 아쉬움이 '케어 시점의 소외'임을 입증했습니다.
+                                    </p>
+                                </div>
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Key Decision</h4>
+                                    <p class="accordion-block-text">
+                                        구독을 제품 계약이 아니라 가입, 사용, 케어, 재선택이 이어지는 관계로 재정의하고 순환형 Customer Experience Journey를 설계했습니다.
+                                    </p>
+                                </div>
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Outcome</h4>
+                                    <p class="accordion-block-text">
+                                        관계가 매끄럽게 연결되는 지속적인 선순환형 시나리오와 연계형 AI Agent 도식 접점 기획안을 도출하여 브랜드에 적합한 CX 기조를 이끌었습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 03: Ugly 3 -->
+                    <div class="work-card">
+                        <div class="work-visual-panel">
+                            <div class="work-visual-placeholder ugly-bg">
+                                <div class="inner-content">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                    </svg>
+                                    <span class="placeholder-path">assets/ugly3-cover.jpg</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <div class="work-header">
+                                <span class="work-num">PROJECT 03</span>
+                                <div class="work-meta">AI AGENT · UX RESEARCH · INTERACTION DESIGN</div>
+                                <h3 class="work-name">Ugly 3</h3>
+                                <p class="work-desc">
+                                    “감정, 이성, 새로운 관점을 함께 고려해 사용자의 의사결정을 돕는 멀티 에이전트 AI 서비스”
+                                </p>
+                            </div>
+                            
+                            <div class="work-quick-info">
+                                <div>
+                                    <div class="info-label">주요 역할</div>
+                                    <div class="info-val">AIoT 사례 분석, Self Diary 사용자 리서치, 어피니티 다이어그램, UX/UI 디자인</div>
+                                </div>
+                                <div>
+                                    <div class="info-label">핵심 결과</div>
+                                    <div class="info-val">Self Diary 데이터 320개 분석, 멀티 페르소나 AI 구조 도출, 프로토타입 설계 및 검증</div>
+                                </div>
+                            </div>
+
+                            <div class="work-actions">
+                                <a href="https://the-ugly-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 12px 24px;">Live Demo</a>
+                                <button class="accordion-btn" data-target="accordion-ugly" aria-expanded="false" aria-controls="accordion-ugly">
+                                    View Case Study
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 9l6 6 6-6"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Ugly Accordion -->
+                        <div class="work-accordion-content" id="accordion-ugly">
+                            <div class="accordion-inner">
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Problem</h4>
+                                    <p class="accordion-block-text">
+                                        기존의 AI 챗봇들은 지나치게 기계적이고 단방향 정보만 제공하여, 사용자가 입체적인 의사결정 고민에 직면했을 때 실직적인 통찰을 제공하지 못했습니다.
+                                    </p>
+                                </div>
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Research</h4>
+                                    <p class="accordion-block-text">
+                                        320여 일기 기록 데이터를 수집하고 분류하여, 의사 결정을 진행할 때 감정적 보듬음과 분석론적 이성 수렴이 유기적으로 공존해야 마음을 연다는 심리를 정량화했습니다.
+                                    </p>
+                                </div>
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Key Decision</h4>
+                                    <p class="accordion-block-text">
+                                        감정을 담당하는 Amo, 이성을 담당하는 Edi, 새로운 관점을 제시하는 Loco가 실시간으로 협력하는 멀티 에이전트 대화 구조를 설계했습니다.
+                                    </p>
+                                </div>
+                                <div class="accordion-block">
+                                    <h4 class="accordion-block-title">Outcome</h4>
+                                    <p class="accordion-block-text">
+                                        사용자들이 한곳에서 3색 입체 피드백을 실시간으로 확인하면서 건강한 사유를 영위하도록 유도하는 작동성 웹 프로토타입 구축 및 시나리오 검증에 성공했습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="more-work-section reveal">
+            <div class="container">
+                <span class="section-label">더 많은 프로젝트</span>
+                <h2 class="section-title">비즈니스 기회와 아이디어를<br>프로덕트로 확장해 나간 기록들</h2>
+
+                <div class="more-grid">
+                    <!-- More 01: DAL-e Modular Robot -->
+                    <div class="more-card">
+                        <div class="more-img-box">
+                            <div class="more-img-placeholder more-dale-bg">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.68.34-1.42.52-2.17.52s-1.49-.18-2.17-.52L3 14.17v-4.34l3-1.67c1.36-.76 3-.76 4.35 0l3 1.67v4.34l-3 1.67ZM13.66 15.84c.68.34 1.42.52 2.17.52s1.49-.18 2.17-.52l3-1.67v-4.34l-3-1.67c-1.36-.76-3-.76-4.35 0l-3 1.67v4.34l3 1.67Z" />
+                                </svg>
+                                <span class="placeholder-path">assets/dale-cover.jpg</span>
+                            </div>
+                        </div>
+                        <div class="more-content">
+                            <div class="more-header">
+                                <span class="more-meta">DATA ANALYSIS · UX RESEARCH · PRODUCT DESIGN</span>
+                                <div class="more-title-box">
+                                    <h3 class="more-title">DAL-e Modular Robot</h3>
+                                    <svg class="more-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                    </svg>
+                                </div>
+                                <p class="more-desc">
+                                    “특허 분석과 현장 인터뷰를 통해 대형 복합시설의 비정형 수요에 대응하는 다중 결합형 모듈 로봇과 관제 시스템을 설계했습니다.”
+                                </p>
+                            </div>
+                            <div class="more-info-list">
+                                <div class="more-info-item">서비스 로봇 특허 32,807건 분석</div>
+                                <div class="more-info-item">COEX 종사자 인터뷰 진행</div>
+                                <div class="more-info-item">모듈형 로봇 구조 및 방문객 호출 앱, 중앙 관제 시스템 입체 설계</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More 02: Running Mate -->
+                    <div class="more-card">
+                        <div class="more-img-box">
+                            <div class="more-img-placeholder more-run-bg">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A3 3 0 1 0 12 5.58m3.362-.366a3.001 3.001 0 0 1 1.156 4.807m-4.518-4.44a3 3 0 1 1-5.918-.363M15.362 5.214a3.001 3.001 0 0 1-3.362 3.165m-4.518-4.44A3 3 0 1 0 6 5.58m.712-.729a3.001 3.001 0 0 1 1.157 4.807m0 0a3 3 0 1 1-4.243 4.243M9 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6-3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                                <span class="placeholder-path">assets/runningmate-cover.jpg</span>
+                            </div>
+                        </div>
+                        <div class="more-content">
+                            <div class="more-header">
+                                <span class="more-meta">UX RESEARCH · GAMIFICATION · UI DESIGN</span>
+                                <div class="more-title-box">
+                                    <h3 class="more-title">Running Mate</h3>
+                                    <svg class="more-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                    </svg>
+                                </div>
+                                <p class="more-desc">
+                                    “러닝을 포기하는 원인을 기능 부족이 아닌 동기 부족으로 재정의하고, 재미와 연결을 중심으로 한 러닝 경험을 설계했습니다.”
+                                </p>
+                            </div>
+                            <div class="more-info-list">
+                                <div class="more-info-item">러너 499명 설문 및 정밀 지표화 수집</div>
+                                <div class="more-info-item">중간 이탈 러너 대상 FGI 인터뷰 분석</div>
+                                <div class="more-info-item">지속 완주율을 높이는 게이미피케이션 구조, 앱 UI 및 동반 3D 러닝 시뮬레이션</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="background-section reveal" id="experience">
+            <div class="container">
+                <span class="section-label">이력</span>
+                <h2 class="section-title">“디자인과 공학 사이에서<br>기술을 경험으로 연결해왔습니다.”</h2>
+
+                <div class="background-grid">
+                    <!-- Experience Timeline -->
+                    <div class="timeline-container">
+                        <h3 class="timeline-header">경력</h3>
+                        <div class="timeline-list">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-date">2024.01 – 2024.02</div>
+                                <h4 class="timeline-title">한국전자통신연구원 (ETRI)</h4>
+                                <p class="timeline-subtitle">융합표준연구실 인턴</p>
+                                <ul class="timeline-desc-list">
+                                    <li>배달 자율주행 로봇 국가/국제 표준 프레임워크 문서화 수행</li>
+                                    <li>시티버스 축 및 디지털 트윈 시뮬레이션 UI 시각 자료 설계</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-date">2023.07 – 2023.08</div>
+                                <h4 class="timeline-title">Ericsson-LG</h4>
+                                <p class="timeline-subtitle">R&D Innovation 인턴</p>
+                                <ul class="timeline-desc-list">
+                                    <li>Running Mate MVP 기획 주도 및 인터랙션 모바일 인터페이스 디자인 총괄</li>
+                                    <li>글로벌 통신 협력사 Vonage 및 MetaCamp 협업 </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Timeline -->
+                    <div class="timeline-container">
+                        <h3 class="timeline-header">학력</h3>
+                        <div class="timeline-list">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-date">2025.08 – 2025.12</div>
+                                <h4 class="timeline-title">고려대학교 지능정보 SW 아카데미 7기</h4>
+                                <p class="timeline-subtitle">AI 및 빅데이터 융합 과정 (총 640시간)</p>
+                                <ul class="timeline-desc-list">
+                                    <li>머신러닝 알고리즘 수리 설계 및 빅데이터 정제 기법 학습</li>
+                                    <li>실무 데이터셋 활용 지식 그래프 및 생성형 엔지니어링 융합 서비스 구현 능력 확보</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-date">2019.03 – 2025.02</div>
+                                <h4 class="timeline-title">동국대학교</h4>
+                                <p class="timeline-subtitle">산업시스템공학과 학사</p>
+                                <ul class="timeline-desc-list">
+                                    <li>통계 분석, 인간공학 기반 작업 디자인 체계 이수</li>
+                                    <li>사용자 인터페이스 사용성 평가 방법론 이론 수료</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section reveal" id="contact">
+            <div class="container">
+                <span class="contact-label">연락</span>
+                <h2 class="contact-title">“사용자의 실제 문제를<br>함께 찾고 싶다면 이야기해주세요.”</h2>
+                <p class="contact-desc">
+                    UX Research, Product Design, AI Service Design과 관련한 협업과 새로운 기회를 기다리고 있습니다.
+                </p>
+                <div class="contact-buttons">
+                    <a href="mailto:jbro2018@naver.com" class="btn btn-white" aria-label="최준형에게 이메일 보내기">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        Email Me
+                    </a>
+                    <a href="https://www.linkedin.com/in/junhyoung-choi-9606422b9" target="_blank" rel="noopener noreferrer" class="btn btn-trans" aria-label="최준형의 LinkedIn을 새 창에서 열기">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M6.94 8.5H3.56V19h3.38V8.5ZM5.25 3A1.96 1.96 0 1 0 5.25 6.92 1.96 1.96 0 0 0 5.25 3ZM19.44 12.98c0-3.17-1.69-4.64-3.95-4.64-1.82 0-2.63 1-3.08 1.71V8.5H9.03V19h3.38v-5.2c0-1.37.26-2.7 1.96-2.7 1.67 0 1.69 1.56 1.69 2.79V19h3.38v-6.02Z"></path>
+                        </svg>
+                        LinkedIn
+                    </a>
+                    <!-- 실제 이력서 PDF는 assets/choi-junhyoung-resume.pdf 경로에 포함되어 있습니다. -->
+                    <a href="assets/choi-junhyoung-resume.pdf" download="Choi_Junhyoung_Resume.pdf" class="btn btn-trans" aria-label="최준형 이력서 PDF 다운로드">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 3v12"></path>
+                            <path d="m7 10 5 5 5-5"></path>
+                            <path d="M5 21h14"></path>
+                        </svg>
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div>© 2026 Jae Choi. All rights reserved.</div>
+            <div>Designed with context. Built with logic.</div>
+        </div>
+    </footer>
+
+    <!-- 페이지 최상단 즉시 이동 버튼 -->
+    <button class="back-to-top" id="backToTop" aria-label="페이지 최상단으로 이동">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. Scramble Decryption Animation ---
+            const scrambleSpeed = 15; // Snappy shuffle
+            const cyclesPerLetter = 3;
+            const scrambleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+";
+            
+            const paragraph = document.getElementById('scrambleParagraph');
+            const scrambleWraps = document.querySelectorAll('.scramble-word-wrap');
+
+            scrambleWraps.forEach(wrap => {
+                const wordElement = wrap.querySelector('.scramble-word');
+                const originalText = wordElement.getAttribute('data-original');
+                const targetSelector = wrap.getAttribute('data-target');
+                let intervalId = null;
+
+                const triggerScramble = () => {
+                    let cycles = 0;
+                    if (intervalId) clearInterval(intervalId);
+
+                    intervalId = setInterval(() => {
+                        const scrambled = originalText
+                            .split("")
+                            .map((char, index) => {
+                                if (cycles / cyclesPerLetter > index) return char;
+                                return scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
+                            })
+                            .join("");
+
+                        wordElement.textContent = scrambled;
+                        cycles++;
+
+                        if (cycles >= originalText.length * cyclesPerLetter) {
+                            clearInterval(intervalId);
+                            wordElement.textContent = originalText;
+                        }
+                    }, scrambleSpeed);
+                };
+
+                const resetScramble = () => {
+                    if (intervalId) clearInterval(intervalId);
+                    wordElement.textContent = originalText;
+                };
+
+                wrap.addEventListener('mouseenter', () => {
+                    paragraph.classList.add('dimmed');
+                    wrap.classList.add('hovered');
+                    triggerScramble();
+                });
+
+                wrap.addEventListener('mouseleave', () => {
+                    paragraph.classList.remove('dimmed');
+                    wrap.classList.remove('hovered');
+                    resetScramble();
+                });
+
+                const navigateToTarget = (e) => {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetSelector);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                        targetElement.setAttribute('tabindex', '-1');
+                        targetElement.focus({ preventScroll: true });
+                    }
+                };
+
+                wrap.addEventListener('click', navigateToTarget);
+                wrap.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        navigateToTarget(e);
+                    }
+                });
+            });
+
+            // --- 2. Scroll Events (Back to top) ---
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // --- 3. Portfolio Accordion Mechanism ---
+            const accordionButtons = document.querySelectorAll('.accordion-btn');
+            accordionButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.getAttribute('data-target');
+                    const targetAccordion = document.getElementById(targetId);
+                    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+                    btn.setAttribute('aria-expanded', !isExpanded);
+                    btn.classList.toggle('active');
+
+                    if (!isExpanded) {
+                        targetAccordion.classList.add('open');
+                        targetAccordion.style.maxHeight = targetAccordion.scrollHeight + 'px';
+                    } else {
+                        targetAccordion.style.maxHeight = '0px';
+                        targetAccordion.classList.remove('open');
+                    }
+                });
+            });
+
+            // --- 4. Scroll Entry Observers (Reveal Effect) ---
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const revealObserver = new IntersectionObserver(revealCallback, {
+                root: null,
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            revealElements.forEach(elem => {
+                revealObserver.observe(elem);
+            });
+        });
+    </script>
+</body>
+</html>
